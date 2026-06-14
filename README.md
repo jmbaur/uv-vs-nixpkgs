@@ -1,6 +1,6 @@
 # uv-test
 
-This is a demonstration of how uv is incapable of using multiple versions of the same dependency across two projects within a workspace, whereas nixpkgs allows for this type of flexibility OOTB.
+This is a demonstration of how uv is incapable of using multiple (conflicting) versions of the same dependency across two projects within a workspace, whereas nixpkgs allows for this type of flexibility OOTB.
 
 ## uv
 
