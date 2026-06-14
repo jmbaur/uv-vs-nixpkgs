@@ -12,6 +12,11 @@
             pkgs.mkShell {
               packages = [ pkgs.uv ];
               env.UV_PYTHON = pkgs.lib.getExe pkgs.python3;
+              # hack required for numpy downloaded by uv to work
+              env.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+                pkgs.libgcc.lib
+                pkgs.zlib
+              ];
             };
         });
 

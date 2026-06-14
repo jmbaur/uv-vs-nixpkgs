@@ -1,12 +1,13 @@
 # uv-test
 
-This is a demonstration of how uv is incapable of using multiple (conflicting) versions of the same dependency across two projects within a workspace, whereas nixpkgs allows for this type of flexibility OOTB.
+This is a demonstration of how multiple (conflicting) versions of the same dependency across two projects works with uv versus nixpkgs.
 
 ## uv
 
 ```console
-$ nix develop -c uv lock
-# notice error when uv tries to resolve conflicting numpy version specifiers
+$ uv run --preview-features package-conflicts --package test1 packages/test1/main.py
+$ uv run --preview-features package-conflicts --package test2 packages/test2/main.py
+# notice two different numpy versions printed
 ```
 
 ## nix
